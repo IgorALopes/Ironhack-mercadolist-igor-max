@@ -11,7 +11,7 @@ export function AddItem() {
     }
 
     async function handleSubmit(e) {
-        e.preventDefaut();
+        e.preventDefault();
 
         try {
             const response = await axios.post(
@@ -26,7 +26,7 @@ export function AddItem() {
 
 
     return <form onSubmit={handleSubmit}>
-        <label htmlFor="produto">Produto: </label>
+        <label htmlFor="produto">Produto:</label>
         <input id="produto" name='product' type="txt" value={form.product} onChange={handleChange}/>
         <button type="submit">Adicionar!</button>
     </form>
