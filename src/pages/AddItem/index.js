@@ -1,7 +1,10 @@
 import { useState } from "react"
 import axios from "axios"
+import {useNavigate} from "react-router-dom"
 
 export function AddItem() {
+    const navigate = useNavigate()
+    
     const [form, setForm] = useState({
         product: ''
     })
@@ -18,6 +21,7 @@ export function AddItem() {
                 "https://ironrest.herokuapp.com/mercadoIgorMax",
                 form
             )
+            navigate('/')
             console.log(response)
         } catch(err) {
             console.log(err)
