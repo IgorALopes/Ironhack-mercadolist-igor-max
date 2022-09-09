@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import{Link} from "react-router-dom"
+import{ Link } from "react-router-dom"
 
 
 export function Home() {
@@ -29,7 +29,12 @@ export function Home() {
             <button>Adicionar item</button>
             </Link>
             {produtos.map((currentProduct) => {
-                return <h2>{currentProduct.product}</h2>
+                return <>
+                <h2>{currentProduct.product}</h2>
+                <Link to={`/edit/${currentProduct._id}`}>
+                    <button>Editar</button>
+                </Link>
+                </>
             })}
         </>
     )
