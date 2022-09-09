@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+
 export function Home() {
   const [produtos, setProdutos] = useState([]);
   const [needReload, setNeedReload] = useState(false);
@@ -53,6 +54,7 @@ export function Home() {
           <>
             <h2>{currentProduct.product}</h2>
 
+
             <button
               onClick={() => {
                 handleToast(currentProduct._id);
@@ -66,3 +68,5 @@ export function Home() {
     </>
   );
 }
+
+            
